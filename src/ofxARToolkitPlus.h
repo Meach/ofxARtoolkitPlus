@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include <ar.h>
+#include "ARToolKitPlus/TrackerMultiMarker.h"
 
 // Scale value for the border
 // Based on the type of marker
@@ -110,11 +111,25 @@ class ofxARToolkitPlus  {
 	///////////////////////////////////////////
 	/* Set the threshold manually */
 	void setThreshold(int threshold);
+    /* Get the threshold value */
+    int getThreshold(void) const;
 	/* Enables or disables automatic threshold calculation */
 	void activateAutoThreshold(bool state);
+    /* Get to know if the automatic threshold is enabled */
+    bool isAutoThresholdActivated(void) const;
 	/* Set the width of the markers to calculate an accurate matrix in real world scale */
 	void setMarkerWidth(float mm);
-
+    /* Get the width of the markers in mm */
+    float getMarkerWidth(void) const;
+    /* Set the type of image we want to use. Default is luminance (gray) */
+    void setPixelFormat(ARToolKitPlus::PIXEL_FORMAT format);
+    /* Set the image processing mode. Default is full resolution */
+    void setImageProcessingMode(ARToolKitPlus::IMAGE_PROC_MODE mode);
+    /* Set the undistortion mode we want to use. Default is lookup-table undistortion for high-speed */
+    void setUndistortionMode(ARToolKitPlus::UNDIST_MODE mode);
+    /* Set the pose estimator we want to use. Default is new "Robust Planar Pose" estimator which is more robust than ARTK standard one */
+    void setPoseEstimator(ARToolKitPlus::POSE_ESTIMATOR pose);
+    
 	///////////////////////////////////////////
 	// MARKER INFO
 	///////////////////////////////////////////

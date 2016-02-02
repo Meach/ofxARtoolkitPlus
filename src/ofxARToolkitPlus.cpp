@@ -1,8 +1,6 @@
 
 #include "ofxARToolkitPlus.h"
 
-#include "ARToolKitPlus/TrackerMultiMarker.h"
-
 ARToolKitPlus::TrackerMultiMarker *tracker;
 ARToolKitPlus::ARMultiMarkerInfoT *multiMarker;
 
@@ -141,7 +139,7 @@ void ofxARToolkitPlus::draw(int x, int y, int w, int h) {
 		// Draw the center point
 		ofFill();
 		ofSetColor(255, 0, 255 );
-		ofRect(marker.pos[0]-1, marker.pos[1]-1, 2, 2);
+		ofDrawRectangle(marker.pos[0]-1, marker.pos[1]-1, 2, 2);
 		
 		// Draw the inner rectangle
 		ofNoFill();
@@ -403,14 +401,42 @@ void ofxARToolkitPlus::setThreshold(int threshold) {
 	tracker->setThreshold(threshold);
 }
 
+int ofxARToolkitPlus::getThreshold(void) const {
+    return tracker->getThreshold();
+}
+
 void ofxARToolkitPlus::activateAutoThreshold(bool state) {
 	tracker->activateAutoThreshold(state);
+}
+
+bool ofxARToolkitPlus::isAutoThresholdActivated(void) const {
+    return tracker->isAutoThresholdActivated();
 }
 
 void ofxARToolkitPlus::setMarkerWidth(float mm) {
 	markerWidth = mm;
 	halfMarkerWidth = markerWidth/2;
 	setupHomoSrc();
+}
+
+float ofxARToolkitPlus::getMarkerWidth(void) const {
+    return markerWidth;
+}
+
+void ofxARToolkitPlus::setPixelFormat(ARToolKitPlus::PIXEL_FORMAT format) {
+    tracker->setPixelFormat(format);
+}
+
+void ofxARToolkitPlus::setImageProcessingMode(ARToolKitPlus::IMAGE_PROC_MODE mode) {
+    tracker->setImageProcessingMode(mode);
+}
+
+void ofxARToolkitPlus::setUndistortionMode(ARToolKitPlus::UNDIST_MODE mode) {
+    tracker->setUndistortionMode(mode);
+}
+
+void ofxARToolkitPlus::setPoseEstimator(ARToolKitPlus::POSE_ESTIMATOR pose) {
+    tracker->setPoseEstimator(pose);
 }
 
 void ofxARToolkitPlus::setupHomoSrc() {

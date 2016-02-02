@@ -1,5 +1,5 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2DE9C8846D9375EAACFABA8963120E8E7719BAF5",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "913682601BA22E8A00BA66026AC581C56B9868C6",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -9,12 +9,12 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5C313D2E-64EE-4F44-8B8D-DDC60415D373",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "2DE9C8846D9375EAACFABA8963120E8E7719BAF5" : "openFrameworks\/",
-    "913682601BA22E8A00BA66026AC581C56B9868C6" : "openFrameworks\/addons\/ofxARtoolkitPlus\/"
+    "2DE9C8846D9375EAACFABA8963120E8E7719BAF5" : "..",
+    "913682601BA22E8A00BA66026AC581C56B9868C6" : "ofxARtoolkitPlus\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ofxARToolKitPlusExample",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "apps\/myApps\/ofxARToolKitPlusExample\/ofxARToolKitPlusExample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "example\/ofxARToolKitPlusExample.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/openframeworks\/openFrameworks.git",
