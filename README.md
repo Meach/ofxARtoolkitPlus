@@ -27,15 +27,15 @@ ofxOpenCV
 
 Compatibility
 ------------
+Tested on OSX 10.11 with OF0.9.1 and Xcode 7.2.
 
 
 Known issues
 ------------
 
-for your costum compilationn
-build the static library rather that shared library
+For custom compilation, build the static library rather that shared library.
 
-in CMakeLists.txt line 32
+in CMakeLists.txt line 34
 comment 
     #add_library(ARToolKitPlus SHARED ${HEADERS_AR} ${SOURCES_AR})
 replace with
