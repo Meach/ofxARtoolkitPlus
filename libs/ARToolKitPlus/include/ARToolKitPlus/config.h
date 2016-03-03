@@ -115,7 +115,9 @@
 		#  if defined( AR_LIBRARY )
 		#    define AR_EXPORT   __declspec(dllexport)
 		#  else
-		#    define AR_EXPORT   __declspec(dllimport)
+		//#    define AR_EXPORT   __declspec(dllimport)
+		// Quick fix to compile with VS 2015 and sources files
+		#    define AR_EXPORT
 		#  endif
 	#else
 		#  define AR_EXPORT

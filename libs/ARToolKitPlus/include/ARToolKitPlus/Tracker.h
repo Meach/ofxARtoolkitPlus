@@ -31,6 +31,7 @@
 #include <ARToolKitPlus/extra/Hull.h>
 
 #include <vector>
+#include <algorithm>
 
 
 namespace ARToolKitPlus {
