@@ -35,6 +35,10 @@ void ofxARToolkitPlus::setup(int w, int h) {
 //--------------------------------------------------
 void ofxARToolkitPlus::setup(int w, int h, string camParamFile, string multiFile, int maxImagePatterns, int pattWidth, int pattHeight, int pattSamples, int maxLoadPatterns){
 	
+	// Clear the tracker before hand in case it was already initialised
+	if (tracker != NULL) { delete tracker; }
+
+
 	width = w;
 	height = h;	
 	useBCH = true;
@@ -69,12 +73,15 @@ void ofxARToolkitPlus::setup(int w, int h, string camParamFile, string multiFile
 						ofToDataPath(multiFile).c_str(),
 						1.0f, 1000.0f) )	{
 
-		printf("ERROR: init() failed\n");
+		ofLogError("ofxARToolkitPlus") << "init() failed";
 		delete tracker;
 	
 		return;
 	}
-	tracker->getCamera()->printSettings();
+
+	// Print the camera settings
+	//tracker->getCamera()->printSettings();
+
     // define size of the marker
     //tracker->setPatternWidth(80); // I'm not sure how to define the size with multimarkers since it doesnt seem to have this option.
 	
