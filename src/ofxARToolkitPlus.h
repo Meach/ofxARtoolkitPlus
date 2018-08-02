@@ -12,7 +12,7 @@
 
 class ofxARToolkitPlus  {
 
-	public:	
+public:	
 
 	ofxARToolkitPlus();
 	~ofxARToolkitPlus();
@@ -160,6 +160,10 @@ class ofxARToolkitPlus  {
 	 * The corners are ordered consistantly, starting in the top left and going around in a clockwise direction. */
 	void getDetectedMarkerOrderedBorderCorners(int markerIndex, vector<ofPoint> &corners);
 
+
+private:
+	ARToolKitPlus::TrackerMultiMarker *tracker;
+	ARToolKitPlus::ARMultiMarkerInfoT *multiMarker;
 
 protected:
 	

@@ -1,8 +1,8 @@
 
 #include "ofxARToolkitPlus.h"
 
-ARToolKitPlus::TrackerMultiMarker *tracker;
-ARToolKitPlus::ARMultiMarkerInfoT *multiMarker;
+//ARToolKitPlus::TrackerMultiMarker *tracker;
+//ARToolKitPlus::ARMultiMarkerInfoT *multiMarker;
 
 //class MyLogger : public ARToolKitPlus::Logger
 //{
