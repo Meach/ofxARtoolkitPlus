@@ -446,6 +446,10 @@ void ofxARToolkitPlus::setPoseEstimator(ARToolKitPlus::POSE_ESTIMATOR pose) {
     tracker->setPoseEstimator(pose);
 }
 
+void ofxARToolkitPlus::setUseDetectLite(bool doUse) {
+    tracker->setUseDetectLite(doUse);
+}
+
 void ofxARToolkitPlus::setupHomoSrc() {
 	
 	homoSrc.clear();

@@ -129,7 +129,9 @@ public:
     void setUndistortionMode(ARToolKitPlus::UNDIST_MODE mode);
     /* Set the pose estimator we want to use. Default is new "Robust Planar Pose" estimator which is more robust than ARTK standard one */
     void setPoseEstimator(ARToolKitPlus::POSE_ESTIMATOR pose);
-    
+    /* Enables usage of arDetectMarkerLite. Otherwise arDetectMarker is used */
+    void setUseDetectLite(bool doUse);
+
 	///////////////////////////////////////////
 	// MARKER INFO
 	///////////////////////////////////////////
