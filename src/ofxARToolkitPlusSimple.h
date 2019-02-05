@@ -11,7 +11,7 @@ public:
 	~ofxARToolkitPlusSimple();
 
 	/* Setup ARToolKitPlus with the width and height of the image */
-	void setup(int w, int h, string camParamFile, string markerFile);
+    void setup(int w, int h, string camParamFile);
 
 
 	/* Load additional .patt marker file */
@@ -47,7 +47,7 @@ public:
 	/* Get the marker ID of the given index - returns -1 if out of range */
 	//int getMarkerID(int markerIndex);
 
-	float getConfidence();// int index);
+    float getConfidence(int pattId);
 
 
 	///////////////////////////////////////////

@@ -13,7 +13,7 @@ ofxARToolkitPlusSimple::~ofxARToolkitPlusSimple()
 
 
 //--------------------------------------------------
-void ofxARToolkitPlusSimple::setup(int w, int h, string camParamFile, string markerFile)
+void ofxARToolkitPlusSimple::setup(int w, int h, string camParamFile)
 {
 	width = w;
 	height = h;
@@ -92,9 +92,10 @@ vector<int> ofxARToolkitPlusSimple::update(unsigned char *pixels) {
 }
 
 //--------------------------------------------------
-float ofxARToolkitPlusSimple::getConfidence()
+float ofxARToolkitPlusSimple::getConfidence(int pattId)
 {
-	return tracker->getConfidence();
+    tracker->selectDetectedMarker(pattId);
+    return tracker->getConfidence();
 }
 
 
