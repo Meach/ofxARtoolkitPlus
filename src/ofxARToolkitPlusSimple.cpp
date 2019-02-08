@@ -104,3 +104,14 @@ void ofxARToolkitPlusSimple::setThreshold(int threshold) {
 	tracker->activateAutoThreshold(false);
 	tracker->setThreshold(threshold);
 }
+
+
+//--------------------------------------------------
+/*ofPoint ofxARToolkitPlusSimple::getDetectedMarkerCenter(int markerIndex)
+{
+	tracker->selectDetectedMarker(markerIndex);
+	
+
+	ARToolKitPlus::ARMarkerInfo marker = tracker->getDetectedMarker(markerIndex);
+	return ofPoint(marker.pos[0], marker.pos[1]);
+}*/

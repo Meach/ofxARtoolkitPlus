@@ -56,6 +56,12 @@ public:
 	/* Set the threshold manually */
 	void setThreshold(int threshold);
 
+	///////////////////////////////////////////
+	// 2D GEOMETRY
+	///////////////////////////////////////////
+	/* Return the center of the detected marker in screen coordinates */
+	//ofPoint getDetectedMarkerCenter(int markerIndex);
+
 private:
 	ARToolKitPlus::TrackerSingleMarker *tracker;
 
