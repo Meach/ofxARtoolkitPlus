@@ -30,7 +30,9 @@ namespace ARToolKitPlus {
 TrackerSingleMarker::TrackerSingleMarker(int imWidth, int imHeight, int maxImagePatterns, int pattWidth, int pattHeight,
         int pattSamples, int maxLoadPatterns) :
     Tracker(imWidth, imHeight, maxImagePatterns, pattWidth, pattHeight, pattSamples, maxLoadPatterns) {
-    thresh = 100;
+	useDetectLite = true;
+	
+	thresh = 100;
 
     patt_width = 2.0;
     patt_center[0] = patt_center[1] = 0.0;
@@ -60,9 +62,18 @@ std::vector<int> TrackerSingleMarker::calc(const uint8_t* nImage, ARMarkerInfo**
 
     // detect the markers in the video frame
     //
-    if (arDetectMarker(nImage, this->thresh, &marker_info, &marker_num) < 0) {
-        return detected;
-    }
+	if (useDetectLite) {
+		if (arDetectMarkerLite(nImage, this->thresh, &marker_info, &marker_num) < 0) {
+			return detected;
+		}
+	}
+	else {
+		if (arDetectMarker(nImage, this->thresh, &marker_info, &marker_num) < 0) {
+			return detected;
+		}
+	}
+
+	
 
     // copy all valid ids
     for (int j = 0; j < marker_num; j++) {

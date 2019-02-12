@@ -55,6 +55,8 @@ public:
 	///////////////////////////////////////////
 	/* Set the threshold manually */
 	void setThreshold(int threshold);
+	/* Enables usage of arDetectMarkerLite. Otherwise arDetectMarker is used */
+	void setUseDetectLite(bool doUse);
 
 	///////////////////////////////////////////
 	// 2D GEOMETRY

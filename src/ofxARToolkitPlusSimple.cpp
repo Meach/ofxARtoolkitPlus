@@ -61,6 +61,8 @@ void ofxARToolkitPlusSimple::setup(int w, int h, string camParamFile)
 	pattId = tracker->addPattern((char *)ofToDataPath("M1.patt").c_str());
 
 	ofLogVerbose("ofxARToolkitPlusSimple") << "patno = " << pattId;*/
+
+	tracker->setUseDetectLite(false);
 }
 
 //--------------------------------------------------
@@ -103,6 +105,13 @@ float ofxARToolkitPlusSimple::getConfidence(int pattId)
 void ofxARToolkitPlusSimple::setThreshold(int threshold) {
 	tracker->activateAutoThreshold(false);
 	tracker->setThreshold(threshold);
+}
+
+
+//--------------------------------------------------
+void ofxARToolkitPlusSimple::setUseDetectLite(bool doUse)
+{
+	tracker->setUseDetectLite(doUse);
 }
 
 

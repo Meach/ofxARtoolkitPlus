@@ -111,6 +111,17 @@ public:
         return (float)confidence;
     }
 
+	/// Enables usage of arDetectMarkerLite. Otherwise arDetectMarker is used
+	/**
+	* Enables usage of arDetectMarkerLite. Otherwise arDetectMarker is used
+	* In general arDetectMarker is more powerful since it keeps history about markers.
+	* In some cases such as very low camera refresh rates it is advantegous to change this.
+	* Using the non-lite version treats each image independent.
+	*/
+	virtual void setUseDetectLite(bool nEnable) {
+		useDetectLite = nEnable;
+	}
+
 protected:
     ARFloat confidence;
     ARFloat patt_width;
@@ -120,6 +131,8 @@ protected:
     // save the results of last calc call
     ARMarkerInfo *marker_info;
     int marker_num;
+	
+	bool useDetectLite;
 };
 
 } // namespace ARToolKitPlus
